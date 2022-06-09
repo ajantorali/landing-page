@@ -1,0 +1,119 @@
+*{
+    margin: 0%; padding: 0%;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    font-family: 'Roboto', sans-serif;
+}
+header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 10000;
+    padding: 20px 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo{
+    font-size: 25px;
+    color: #333;
+}
+header .navbar a{
+    font-size: 20px;
+    color: #666;
+    margin-left: 20px;
+}
+header .navbar a:hover{
+    color: #999;
+}
+
+.container{
+    min-height: 100vh;
+    gap: 15px;
+    display: flex;
+    align-items: center;
+    padding: 20px 9%;
+    position: relative;
+    overflow: hidden;
+}
+.container .content{
+    flex: 1 1 400px;
+}
+.container .image{
+    flex: 1 1 400px;
+    position: relative;
+}
+.container .image .shoe{
+    width: 100%;
+}
+.container .image::before{
+    z-index: -1;
+    content: '';
+    position: absolute;
+    top: -50; left: 100px;
+    border-radius: 50%;
+    height: 450px;
+    width: 450px;
+    background: #eee;
+}
+
+.container .content h3{
+    color: #333;
+    font-size: 50px;
+}
+.container .content p{
+    color: #666;
+    size: 17px;
+    padding: 15px 0;
+}
+.container .content .btn{
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 17px;
+    padding: 9px 40px;
+    color: #eee;
+    background: black;
+    border-radius: 5px;
+}
+
+.container .content .btn:hover{
+    background: #666;
+}
+.container .left, .container .right{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 50px;
+    width: 50px;
+    border: 2px solid #333;
+    color: #333;
+    line-height: 45px;
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: center;
+    cursor: pointer;
+}
+.container .left{
+    left: 30px;
+}
+
+.container .right{
+    right: 50px;
+}
+
+.container .left:hover, .container .right:hover{
+    background: #333;
+    color: #eee;
+}
+
+.container .image .shoe.active{
+    display: initial;
+    animation: animate .5s cubic-bezier(0.45, 0.63, 0.98, 1.55);
+}
+@keyframes animate{
+    0%{
+        transform: rotate(0deg) scale(.8);
+    }
+}
